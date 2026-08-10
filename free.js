@@ -134,11 +134,11 @@ client.on('connect', () => {
       const firstRole = Math.random() > 0.5 ? 'OUT' : 'IN';
       const secondRole = firstRole === 'OUT' ? 'IN' : 'OUT';
 
-      bulkTelemetry.push(
-        createController(firstId, secondId, firstRole, nextTelemetryAnomaly()),
-        createController(secondId, firstId, secondRole, nextTelemetryAnomaly())
-      );
-    }
+    //   bulkTelemetry.push(
+    //     createController(firstId, secondId, firstRole, nextTelemetryAnomaly()),
+    //     createController(secondId, firstId, secondRole, nextTelemetryAnomaly())
+    //   );
+    // }
 
     client.publish('devices/bulk/telemetry', JSON.stringify(bulkTelemetry));
     console.log('📡 10 bulk telemetry records sent:', bulkTelemetry);
